@@ -22,7 +22,9 @@ public class SleepStringFormatter implements Formatter {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            return e.getMessage();
         }
+
         SimpleDateFormat formatForDateNow = new SimpleDateFormat(format);
         return formatForDateNow.format(date)+" time for formatting "+String.valueOf(new Date().getTime()-cur_time)+" ms";
     }
