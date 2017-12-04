@@ -11,19 +11,20 @@ import java.util.Date;
  */
 public class Printer {
     private Formatter formatter;
-    private Date date;
-   public Printer(final Date date,
-                  Formatter formatter) {
-       this.formatter=formatter;
-       this.date=date;
-   }
+    private final Date date;
 
-    public void setFormatter(Formatter formatter){
-        this.formatter=formatter;
+    public Printer(final Date date,
+                   final Formatter formatter) {
+        this.formatter = formatter;
+        this.date = date;
     }
-   public void print() {
-      final String asString =formatter.format(date);
 
-      System.out.println(asString);
-   }
+    public void setFormatter(final Formatter formatter) {
+        this.formatter = formatter;
+    }
+
+    public void print() {
+        final String asString = formatter.format(date);
+        System.out.println(asString);
+    }
 }

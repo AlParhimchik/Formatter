@@ -11,22 +11,22 @@ import java.util.Date;
  * To change this template use File | Settings | File Templates.
  */
 public class SleepStringFormatter implements Formatter {
-     private String format;
-    public SleepStringFormatter(String format) {
-        this.format=format;
-    }
-    public String format(Date date) {
-       long cur_time=new Date().getTime();
+    private final String format;
 
+    public SleepStringFormatter(final String format) {
+        this.format = format;
+    }
+
+    public String format(final Date date) {
+        long curTime = new Date().getTime();
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
             return e.getMessage();
         }
-
         SimpleDateFormat formatForDateNow = new SimpleDateFormat(format);
-        return formatForDateNow.format(date)+" time for formatting "+String.valueOf(new Date().getTime()-cur_time)+" ms";
+        return formatForDateNow.format(date) + " time for formatting " + String.valueOf(new Date().getTime() - curTime) + " ms";
     }
 
 }

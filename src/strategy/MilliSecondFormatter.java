@@ -11,7 +11,7 @@ import java.util.Date;
  */
 public class MilliSecondFormatter implements  Formatter{
 
-   public String format(Date date){
-       return  String.valueOf(date.getTime()/1000);
+   public String format(final Date date){
+       return  String.valueOf(date.getTime() / 1000);
    }
 }

@@ -11,15 +11,14 @@ import java.util.Date;
  * To change this template use File | Settings | File Templates.
  */
 public class StringSimpleFormatter implements Formatter {
-    private String format;
+    private final String format;
 
-    public StringSimpleFormatter(String format) {
-        this.format=format;
+    public StringSimpleFormatter(final String format) {
+        this.format = format;
     }
 
-    public String format(Date date){
-
-         SimpleDateFormat formatForDateNow = new SimpleDateFormat(format);
-         return formatForDateNow.format(date);
+    public String format(final Date date) {
+        SimpleDateFormat formatForDateNow = new SimpleDateFormat(format);
+        return formatForDateNow.format(date);
     }
 }
