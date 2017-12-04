@@ -9,7 +9,7 @@ import java.util.Date;
  * Time: 10:39
  * To change this template use File | Settings | File Templates.
  */
-public class MilliSecondFormatter extends  Formatter{
+public class MilliSecondFormatter implements  Formatter{
 
    public String format(Date date){
        return  String.valueOf(date.getTime()/1000);

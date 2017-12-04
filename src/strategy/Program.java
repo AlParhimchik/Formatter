@@ -13,8 +13,7 @@ public class Program {
     public static void main(String[] args){
         Printer printer=new Printer(new Date(),new MilliSecondFormatter());
         printer.print();
-        printer.setFormatter(new StringSimpleFormatter("E yyyy.MM.dd 'и время' hh:mm:ss"));
+        printer.setFormatter(new SleepStringFormatter("E yyyy.MM.dd 'и время' hh:mm:ss"));
         printer.print();
-           //System.out.println("Hello, World!");
     }
 }

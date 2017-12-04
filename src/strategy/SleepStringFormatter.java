@@ -1,5 +1,6 @@
 package strategy;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -9,18 +10,21 @@ import java.util.Date;
  * Time: 11:41
  * To change this template use File | Settings | File Templates.
  */
-public class SleepStringFormatter extends StringSimpleFormatter{
+public class SleepStringFormatter implements Formatter {
+     private String format;
     public SleepStringFormatter(String format) {
-        super(format);
+        this.format=format;
     }
-    public String format(Date date){
-        try {
+    public String format(Date date) {
+       long cur_time=new Date().getTime();
 
+        try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
-        return super.format(date)+" time for formatting 1000 ms";
+        SimpleDateFormat formatForDateNow = new SimpleDateFormat(format);
+        return formatForDateNow.format(date)+" time for formatting "+String.valueOf(new Date().getTime()-cur_time)+" ms";
     }
 
 }

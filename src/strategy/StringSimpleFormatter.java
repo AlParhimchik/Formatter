@@ -10,7 +10,7 @@ import java.util.Date;
  * Time: 11:33
  * To change this template use File | Settings | File Templates.
  */
-public class StringSimpleFormatter extends Formatter {
+public class StringSimpleFormatter implements Formatter {
     private String format;
 
     public StringSimpleFormatter(String format) {

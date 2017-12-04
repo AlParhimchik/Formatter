@@ -9,8 +9,6 @@ import java.util.Date;
  * Time: 10:36
  * To change this template use File | Settings | File Templates.
  */
-public abstract class Formatter  {
-    public String format(Date date){
-        return date.toString();
-    }
+public interface Formatter  {
+    public String format(Date date);
 }
